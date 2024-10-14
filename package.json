@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "start": "pnpm run build && node dist/index.js"
+    "start": "pnpm run build && node dist/src/index.js",
+    "measure-latency": "pnpm run build && node dist/script/measure-latency.js"
   },
   "keywords": [],
   "author": "",
