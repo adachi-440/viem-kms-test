@@ -11,7 +11,9 @@ async function main() {
   if (!keyId) {
     throw new Error("KMS_KEY_ID is not set");
   }
-  const signer = new AwsKmsSigner(keyId);
+  const signer = new AwsKmsSigner(keyId, {
+    region: "us-east-1",
+  });
   const kmsAccount = await toKmsAccount({ signer });
 
   const walletClient = createWalletClient({
