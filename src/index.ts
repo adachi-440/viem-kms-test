@@ -22,6 +22,8 @@ async function main() {
     transport: http(),
   })
 
+  console.log(`address: ${kmsAccount.address}`)
+
   const typedData: TypedDataDefinition = {
     types: {
       EIP712Domain: [
@@ -62,12 +64,12 @@ async function main() {
   const signature = await walletClient.signTypedData(typedData);
   console.log(signature);
 
-  const tx = await walletClient.sendTransaction({
-    to: "0x1aaaeb006AC4DE12C4630BB44ED00A764f37bef8",
-    value: parseEther("0.0001"),
-  });
+  // const tx = await walletClient.sendTransaction({
+  //   to: "0x1aaaeb006AC4DE12C4630BB44ED00A764f37bef8",
+  //   value: parseEther("0.0001"),
+  // });
 
-  console.log(tx);
+  // console.log(tx);
 }
 
 main().catch((e) => console.error(e));
